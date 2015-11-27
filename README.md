@@ -1,4 +1,4 @@
-# Midburn-Santa
+# Burning-Santa
 Create your own working dir
 Windows
 c:\midburn
