@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>
+        Burning Santa - The Midburn 2016 Unofficial Secret Santa Game
+    </title>
+
+    <style>
+        .header div span{
+            color: #5379fa !important;
+        }
+
+        input[type="button"], input[type="submit"] {
+            background: #FE837C;
+            border-radius: 100px;
+            color: white;
+        }
+
+        input[type=text], input[type=password] {
+            background: rgba(215,215,215,0.50);
+            border: 4px solid #FE837C;
+            border-radius: 100px;
+            width: 50%;
+            height: 100%;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="body"></div>
+<div class="grad"></div>
+<div class="header">
+    <div>Burning<span>Santa</span></div>
+    <div>Midburn 2016 Unofficial Secret Santa Game</div>
+    <br>
+    <div> some text goes here...</div>
+</div>
+<br>
+<form>
+    <div class="login">
+        <input type="text" placeholder="username" name="username" id="username"><br>
+        <input type="password" placeholder="password" name="password" id="password"><br>
+        <input type="button" value="Login" onclick="check(this.form)">
+    </div>
+</form>
+<div>Come play with us! Click <a href ="">here</a> to sign up.</div>
+<div>Hurry Up! The game starts in....</div>
+
+<div>Forgot your password? We forgive you <3. Just click
+    <a href="">here</a> and maybe we can find a way to help</div>
+
+<script language="javascript">
+    function check(form)/*function to check userid & password*/
+    {
+        /*the following code checkes whether the entered userid and password are matching*/
+        if(form.username.value == "myuserid" && form.pswrd.value == "password")
+        {
+            window.open('GameWillStart.html')/*opens the target page while Id & password matches*/
+        }
+        else
+        {
+            alert("Oh no... Wrong username/password")/*displays error message*/
+        }
+    }
+</script>
+
+
+</body>
+</html>
