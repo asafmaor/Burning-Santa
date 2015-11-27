@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class SantaBase(models.Model):
     class Meta:
         abstract = True
@@ -13,5 +14,10 @@ class User(SantaBase):
     email = models.CharField(max_length=100)
     address = models.CharField(max_length=1000)
     zipcode = models.CharField(max_length=32)
-    santa = models.ForeignKey('User')
+    santa_to = models.ForeignKey('User')
+
+
+class GiftingLog(SantaBase):
+    user = models.ForeignKey('User', related_name='gifts')
+    creation_time = models.DateTimeField(auto_now_add=False)
 
