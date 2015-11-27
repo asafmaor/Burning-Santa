@@ -1,0 +1,8 @@
+//// register.request_data
+{'first_name': 'asaf',
+'last_name': 'maor',
+'password': '123456',
+'city': 'Tel Aviv',
+'Address': 'Our house 1',
+'zipcode': '90210',
+'is_willing_to_get': 1}
