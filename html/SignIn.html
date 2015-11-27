@@ -21,8 +21,18 @@
             background: rgba(215,215,215,0.50);
             border: 4px solid #FE837C;
             border-radius: 100px;
-            width: 50%;
-            height: 100%;
+        }
+
+        .bigbutton {
+            width: 46%;
+            height : 20%;
+            margin: 1%
+        }
+
+        .mediumbutton {
+            width: 32%;
+            height : 14%;
+            margin: 1%
         }
 
         body {
@@ -35,32 +45,16 @@
             background-attachment: fixed;
         }
 
+        .login {
+            position: fixed;
+            bottom: 0%;
+            width: 50%;
+            height : 33.33%;
+            text-align: center;
+        }
     </style>
 
 </head>
-<body>
-
-<div class="body"></div>
-<div class="grad"></div>
-<div class="header">
-    <div>Burning<span>Santa</span></div>
-    <div>Midburn 2016 Unofficial Secret Santa Game</div>
-    <br>
-    <div> some text goes here...</div>
-</div>
-<br>
-<form>
-    <div class="login">
-        <input type="text" placeholder="username" name="username" id="username"><br>
-        <input type="password" placeholder="password" name="password" id="password"><br>
-        <input type="button" value="Login" onclick="check(this.form)">
-    </div>
-</form>
-<div>Come play with us! Click <a href ="">here</a> to sign up.</div>
-<div>Hurry Up! The game starts in....</div>
-
-<div>Forgot your password? We forgive you <3. Just click
-    <a href="">here</a> and maybe we can find a way to help</div>
 
 <script language="javascript">
     function check(form)/*function to check userid & password*/
@@ -76,6 +70,33 @@
         }
     }
 </script>
+
+
+<body>
+
+<div class="body"></div>
+<div class="grad"></div>
+<div class="header">
+    <div>Burning<span>Santa</span></div>
+    <div>Midburn 2016 Unofficial Secret Santa Game</div>
+    <br>
+    <div> some text goes here...</div>
+</div>
+<br>
+
+<div>Come play with us! Click <a href ="">here</a> to sign up.</div>
+<div>Hurry Up! The game starts in....</div>
+
+<div>Forgot your password? We forgive you <3. Just click
+    <a href="">here</a> and maybe we can find a way to help</div>
+
+<form>
+    <div class="login">
+        <input type="text" class="mediumbutton" placeholder="username" name="username" id="username"><br>
+        <input type="password" class="mediumbutton" placeholder="password" name="password" id="password"><br>
+        <input type="button" class="bigbutton" value="Login" onclick="check(this.form)" id="loginbutton">
+    </div>
+</form>
 
 
 </body>
