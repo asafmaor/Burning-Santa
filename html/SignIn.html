@@ -6,7 +6,15 @@
         Burning Santa - The Midburn 2016 Unofficial Secret Santa Game
     </title>
 
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
     <style>
+        @font-face { font-family: Playtime; src: url('../Fonts/playtime.ttf'); }
+        @font-face { font-family: PlaytimeO; src: url('../Fonts/PlaytimeOblique.ttf'); }
+        @font-face { font-family: Playtime3D; src: url('../Fonts/PlaytimeWithHotToddies3D.ttf'); }
+
         .header div span{
             color: #5379fa !important;
         }
@@ -26,13 +34,18 @@
         .bigbutton {
             width: 46%;
             height : 20%;
-            margin: 1%
+            margin: 1%;
+            font-family: Playtime;
+            font-size: 190%;
         }
 
         .mediumbutton {
             width: 32%;
             height : 14%;
-            margin: 1%
+            margin: 1%;
+            text-align: center;
+            font-family: Playtime;
+            font-size: 150%;
         }
 
         body {
@@ -43,15 +56,21 @@
             background-position: top center !important;
             background-repeat: no-repeat !important;
             background-attachment: fixed;
+            font-family: Playtime;
         }
 
         .login {
             position: fixed;
-            bottom: 0%;
+            bottom: 0;
             width: 50%;
             height : 33.33%;
             text-align: center;
         }
+
+        .modal-content{
+            background-image: url('../images/TermsBG.png');
+        }
+
     </style>
 
 </head>
@@ -60,13 +79,14 @@
     function check(form)/*function to check userid & password*/
     {
         /*the following code checkes whether the entered userid and password are matching*/
-        if(form.username.value == "myuserid" && form.pswrd.value == "password")
+        if(form.username.value == "123" && form.password.value == "123")
         {
-            window.open('GameWillStart.html')/*opens the target page while Id & password matches*/
+            $('#myModal').modal('show');
+            /*window.open('GameWillStart.html')/*opens the target page while Id & password matches*/
         }
         else
         {
-            alert("Oh no... Wrong username/password")/*displays error message*/
+            alert("Oh no... Wrong username/password");/*displays error message*/
         }
     }
 </script>
@@ -76,18 +96,20 @@
 
 <div class="body"></div>
 <div class="grad"></div>
-<div class="header">
-    <div>Burning<span>Santa</span></div>
+<div class="header" style="font-size: 30px">
     <div>Midburn 2016 Unofficial Secret Santa Game</div>
     <br>
+    <br>
+
+    <br>
+    <br>
     <div> some text goes here...</div>
-</div>
+</div>F
 <br>
 
-<div>Come play with us! Click <a href ="">here</a> to sign up.</div>
-<div>Hurry Up! The game starts in....</div>
 
-<div>Forgot your password? We forgive you <3. Just click
+
+<div>Forgot your password? We forgive you <3. <br>Just click
     <a href="">here</a> and maybe we can find a way to help</div>
 
 <form>
@@ -98,6 +120,28 @@
     </div>
 </form>
 
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer" style="text-align: center">
+                <button type="button" class="btn btn-default" data-dismiss="modal">NO</button>
+                <button type="button" class="btn-defaultyeah" onclick='window.location.href="SignUp.html"' data-dismiss="modal">YEA!</button>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 </body>
 </html>
