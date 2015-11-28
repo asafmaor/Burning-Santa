@@ -20,9 +20,11 @@ class Address(SantaBase):
     address = models.CharField(max_length=1000)
     zipcode = models.CharField(max_length=32, null=True)
 
+GiftTypes = (('RECIVIED', 'RECIVED'), ('SENT', 'SENT'))
 
 class GiftingLog(SantaBase):
     user = models.ForeignKey(SantaUser, related_name='gifts')
     creation_time = models.DateTimeField(auto_now_add=True)
     comment = models.CharField(max_length=100, null=True)
+    type = models.CharField(max_length=32, choices=GiftTypes)
 
