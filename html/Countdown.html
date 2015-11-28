@@ -23,6 +23,9 @@
             background-repeat: no-repeat !important;
             background-attachment: fixed;
             font-family: Playtime;
+            font-size: 14px;
+            color: #000000;
+            background-color: #D6DCDC;
         }
 
         h1 {
@@ -31,27 +34,181 @@
             padding-right: 8%;
             margin-top: 0px;
             text-align: center;
-
         }
 
         h2 {
             font-size: 250%;
         }
 
+        ul {
+           width: 68%;
+            margin: auto;
+            list-style: none;
+        }
+        li {
+            width: 24.4333%;
+            display: inline-block;
+            text-align: center;
+        }
+
+        li p {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        span {
+            font-size: 42px;
+            font-weight:bold;
+        }
+
+        #starts-in {
+            background-image: url('../images/CountdownUpper.png');
+            width: 900px;
+            min-height: 1068px;
+            margin: auto;
+            background-color: #FE837C;
+            background-repeat: repeat-x;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 63px;
+            font-weight: bold;
+            -webkit-text-stroke: 1px black;
+            color: white;
+            text-shadow: 2px 2px 1px black;
+        }
+
+
     </style>
+    <link rel="stylesheet" href="./css/style.css" />
         </head>
 <body>
-    <div style="background-image: url('../images/CountdownUpper.png');width: 100%;height:1068px">
+    <div id="starts-in">
         <br>
+
         <h1>
-            The game starts in...
+            The game starts in
         </h1>
-    </div>
-    <div style="background-color: #FFE15B;width: 100%;height:100%">
-        <br>
-        <h1>
-            The game starts in...
+        <ul class="countdown">
+            <li>
+                <span class="days"></span>
+                <p class="timeRefDays"></p>
+            </li>
+            <li>
+                <span class="hours"></span>
+                <p class="timeRefHours"></p>
+            </li>
+            <li>
+                <span class="minutes"></span>
+                <p class="timeRefMinutes"></p>
+            </li>
+            <li>
+                <span class="seconds"></span>
+                <p class="timeRefSeconds"></p>
+            </li>
+        </ul>
+        <h1 style="font-size: 45px;">
+            Scroll down to get inspired by gift ideas...
         </h1>
+        <div style="    text-align: center;
+    margin-top: 500px;">
+            <img src="../images/CountdownLower.png" style="height: 500px" />
+
+        </div>
+
     </div>
+
+
 </body>
+<script>
+    //Countdown plugin
+
+    (function($) {
+        $.fn.countdown = function(options, callback) {
+
+            //custom 'this' selector
+            var thisEl = $(this);
+
+            //array of custom settings
+            var settings = {
+                'date': null,
+                'format': null
+            };
+
+            //append the settings array to options
+            if(options) {
+                $.extend(settings, options);
+            }
+
+            //main countdown function
+            var countdown_proc = function () {
+
+                var eventDate = Date.parse(settings['date']) / 1000;
+                var currentDate = Math.floor($.now() / 1000);
+
+                if(eventDate <= currentDate) {
+                    callback.call(this);
+                    clearInterval(interval);
+                };
+
+                var seconds = eventDate - currentDate;
+
+                var days = Math.floor(seconds / (60 * 60 * 24)); //calculate the number of days
+                seconds -= days * 60 * 60 * 24; //update the seconds variable with no. of days removed
+
+                var hours = Math.floor(seconds / (60 * 60));
+                seconds -= hours * 60 * 60; //update the seconds variable with no. of hours removed
+
+                var minutes = Math.floor(seconds / 60);
+                seconds -= minutes * 60; //update the seconds variable with no. of minutes removed
+
+                //conditional Ss
+                if (days == 1) { thisEl.find(".timeRefDays").text("Day"); } else { thisEl.find(".timeRefDays").text("Days"); }
+                if (hours == 1) { thisEl.find(".timeRefHours").text("Hour"); } else { thisEl.find(".timeRefHours").text("Hours"); }
+                if (minutes == 1) { thisEl.find(".timeRefMinutes").text("Minute"); } else { thisEl.find(".timeRefMinutes").text("Minutes"); }
+                if (seconds == 1) { thisEl.find(".timeRefSeconds").text("Second"); } else { thisEl.find(".timeRefSeconds").text("Seconds"); }
+
+                //logic for the two_digits ON setting
+                if(settings['format'] == "on") {
+                    days = (String(days).length >= 2) ? days : "0" + days;
+                    hours = (String(hours).length >= 2) ? hours : "0" + hours;
+                    minutes = (String(minutes).length >= 2) ? minutes : "0" + minutes;
+                    seconds = (String(seconds).length >= 2) ? seconds : "0" + seconds;
+                }
+
+                //update the countdown's html values.
+                if(!isNaN(eventDate)) {
+                    thisEl.find(".days").text(days);
+                    thisEl.find(".hours").text(hours);
+                    thisEl.find(".minutes").text(minutes);
+                    thisEl.find(".seconds").text(seconds);
+                } else {
+                    alert("Invalid date. Here's an example: 12 Tuesday 2012 17:30:00");
+                    clearInterval(interval);
+                }
+            }
+
+            //run the function
+            countdown_proc();
+
+            //loop the function
+            interval = setInterval(countdown_proc, 1000);
+
+        }
+    }) (jQuery);
+
+
+    //Call countdown plugin
+    $(".countdown").countdown({
+                date: "2 february 2016 6:19:00", // add the countdown's end date (i.e. 3 november 2012 12:00:00)
+                format: "on" // on (03:07:52) | off (3:7:52) - two_digits set to ON maintains layout consistency
+            },
+
+            function() {
+
+                // the code here will run when the countdown ends
+                alert("done!")
+
+            });
+</script>
 </html>
