@@ -6,35 +6,168 @@
         Burning Santa - The Midburn 2016 Unofficial Secret Santa Game
     </title>
 
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
     <style>
-        .header div span{
-            color: #5379fa !important;
+        @font-face { font-family: Playtime; src: url('../Fonts/playtime.ttf'); }
+        @font-face { font-family: PlaytimeO; src: url('../Fonts/PlaytimeOblique.ttf'); }
+        @font-face { font-family: Playtime3D; src: url('../Fonts/PlaytimeWithHotToddies3D.ttf'); }
+
+        body {
+            background-image: url("../images/RegestrationBG.png");
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: top center !important;
+            background-repeat: no-repeat !important;
+            background-attachment: fixed;
+            font-family: Playtime;
         }
+
+        h1 {
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 250%;
+            font-style: italic;
+        }
+
+        h2 {
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 200%;
+        }
+
+        .redtext {
+            color: red;
+            font-size: 110%;
+        }
+
+        input[type="text"] {
+            border: 4px solid #38ADAC;
+            border-radius: 100px;
+            width: 46%;
+            height : 14%;
+            margin: 1%;
+            text-align: center;
+            font-family: Playtime;
+            font-size: 290%;
+            line-height: 57px;
+            background:rgba(255,255,255,0.5);
+        }
+
+        input[type="button"] {
+            background: #38ADAC;
+            border: 4px solid #38ADAC;
+            border-radius: 100px;
+            color: #FFFFFF;
+            width: 46%;
+            height : 14%;
+            text-align: center;
+            font-family: Playtime;
+            font-size: 290%;
+            line-height: 57px;
+        }
+
+        ::-webkit-input-placeholder {
+            color: white;
+        }
+
+        :-moz-placeholder { /* Firefox 18- */
+            color: white;
+        }
+
+        ::-moz-placeholder {  /* Firefox 19+ */
+            color: white;
+        }
+
+        :-ms-input-placeholder {
+            color: white;
+        }
+
+        input[type="button"] .OneWay {
+            border: 4px solid #38ADAC;
+            border-radius: 100px;
+            width: 46%;
+            height : 14%;
+            margin: 1%;
+            text-align: center;
+            font-family: Playtime;
+            font-size: 290%;
+            line-height: 57px;
+            background:rgba(255,255,255,0.5);
+        }
+
     </style>
 
 
     <div class="body"></div>
     <div class="grad"></div>
     <div class="header">
-        <div>Burning<span>Santa</span></div>
-        <div>Midburn 2016 Unofficial Secret Santa Game</div>
-        <br>
-        <div> some text goes here...</div>
+        <h1>
+            Fill in your mailing address to receive gifts from your <span class="redtext">Burning Santa</span>
+        </h1>
+        <h2>
+            Only your Santa will see the details below. Are you a privacy freak?<br>
+            You can go "one way" and still be someone else's <span class="redtext">Burning Santa</span>
+        </h2>
     </div>
     <br>
     <form>
         <div class="SignUp">
-            field1 <input type="text" placeholder="field1" name="field1" id="field1"><br>
-            field2 <input type="text" placeholder="field2" name="field2" id="field2"><br>
-            field3 <input type="text" placeholder="field3" name="field3" id="field3"><br>
-            field4 <input type="text" placeholder="field4" name="field4" id="field4"><br>
-            field5 <input type="text" placeholder="field5" name="field5" id="field5"><br>
-            field6 <input type="text" placeholder="field6" name="field6" id="field6"><br>
-            <input type="button" value="SignUp" onclick="check(this.form)" id="signupbutton">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <input type="text" placeholder="First" name="First" id="First">
+                    <input type="text" placeholder="Last" name="Last" id="Last">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <input type="text" placeholder="City" name="City" id="City">
+                    <input type="text" placeholder="Zipcode" name="Zipcode" id="Zipcode">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <input type="text" placeholder="Street Address" name="Street Address" id="Street Address">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <input type="text" placeholder="E-mail" name="E-mail" id="E-mail">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6" style="text-align: center">
+                    <input type="text" placeholder="Playa Name" name="PlayaName" id="PlayaName">
+                </div>
+            </div>
+
+
+            <br><br><br><br><br><br><br><br>
+            <div class="row">
+                <div class="col-xs-6" style="text-align: center">
+                    <input type="button" value="Start Playing" onclick='window.location.href="TellUsMore.html"' id="SignPpButton">
+                </div>
+                <div class="col-xs-6" style="text-align: center">
+                    <input type="button" value="One Way" class="OneWay" name="OneWay" id="OneWay" onclick='window.location.href="Countdown.html"'
+                            style="border: 4px solid #38ADAC;
+                            border-radius: 100px;
+                            width: 46%;
+                            height : 14%;
+                            margin: 1%;
+                            text-align: center;
+                            font-family: Playtime;
+                            font-size: 290%;
+                            line-height: 57px;
+                            background:rgba(255,255,255,0.5)">
+                </div>
+            </div>
+
         </div>
     </form>
-
-
 
 </head>
 <body>

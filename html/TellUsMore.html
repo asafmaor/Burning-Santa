@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>
+        Burning Santa - The Midburn 2016 Unofficial Secret Santa Game
+    </title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+    <style>
+        @font-face { font-family: Playtime; src: url('../Fonts/playtime.ttf'); }
+        @font-face { font-family: PlaytimeO; src: url('../Fonts/PlaytimeOblique.ttf'); }
+        @font-face { font-family: Playtime3D; src: url('../Fonts/PlaytimeWithHotToddies3D.ttf'); }
+
+        body {
+            background-image: url("../images/TellUsMore.png");
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: top center !important;
+            background-repeat: no-repeat !important;
+            background-attachment: fixed;
+            font-family: Playtime;
+        }
+
+        h1 {
+            font-size: 380%;
+            padding-left: 8%;
+            padding-right: 8%;
+        }
+
+        h2 {
+            font-size: 250%;
+        }
+
+        .radio {
+            font-size: 200%;
+        }
+
+        .form-control {
+            font-size: 200%;
+        }
+
+        input[type="button"] {
+            background: #38ADAC;
+            border: 4px solid #38ADAC;
+            border-radius: 100px;
+            color: #FFFFFF;
+            width: 46%;
+            height : 14%;
+            text-align: center;
+            font-family: Playtime;
+            font-size: 290%;
+            line-height: 57px;
+        }
+
+    </style>
+    </head>
+<body>
+    <h1>
+        Fill in your mailing address to receive gifts from your <span class="redtext">Burning Santa</span>
+    </h1>
+    <br>
+    <div style="padding-left: 8%;padding-right: 8%">
+        <h2>
+            What makes you happy?
+        </h2>
+        <textarea class="form-control" rows="3" placeholder="Happy" name="Happy" id="Happy"></textarea>
+        <h2>
+            What makes you sad?
+        </h2>
+        <textarea class="form-control" rows="3" placeholder="Sad" name="Sad" id="Sad"></textarea>
+        <br>
+        <h2>
+            What power ranger are you?
+        </h2>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="Pink" value="Pink">
+                Pink
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="Black" value="Black">
+                Black
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="Red" value="Red">
+                Red
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="Yellow" value="Yellow">
+                Yellow
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="Blue" value="Blue">
+                Blue
+            </label>
+        </div>
+        <div class="col-xs-12" style="text-align: right">
+            <input type="button" value="Submit" onclick='window.location.href="Countdown.html"' id="SubmitButton" >
+        </div>
+</body>
+</html>
