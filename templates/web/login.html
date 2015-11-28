@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html class="uk-height-1-1 no-js">
+    <body class="login uk-height-1-1">
+		    <div class="uk-vertical-align-middle">
+				<h1>Burning santa</h1>
+                {% if error %} {{error}} {% endif %}
+				<form method="post" class="uk-form" action="/login/">
+					<input type="text" name="email" class="uk-form-large uk-form-width-medium" id="email" placeholder="Email" />
+					<input type="password" name="password" id="password" class="uk-form-large uk-form-width-medium" placeholder="Password" />
+					<button class="uk-button uk-button-large"><i class="uk-icon-lock"></i></button>
+				</form>
+	    </div>
+    </body>
+</html>

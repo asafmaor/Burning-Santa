@@ -14,6 +14,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_ROOT = os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..')) + os.path.sep
 
 
 # Quick-start development settings - unsuitable for production
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'midburn.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,6 +76,7 @@ WSGI_APPLICATION = 'midburn.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
+LOGIN_URL = '/login'
 
 DATABASES = {
     'default': {
