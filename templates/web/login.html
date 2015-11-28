@@ -5,6 +5,7 @@
 				<h1>Burning santa</h1>
                 {% if error %} {{error}} {% endif %}
 				<form method="post" class="uk-form" action="/login/">
+					{% csrf_token %}
 					<input type="text" name="email" class="uk-form-large uk-form-width-medium" id="email" placeholder="Email" />
 					<input type="password" name="password" id="password" class="uk-form-large uk-form-width-medium" placeholder="Password" />
 					<button class="uk-button uk-button-large"><i class="uk-icon-lock"></i></button>

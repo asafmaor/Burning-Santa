@@ -3,13 +3,12 @@ from __future__ import unicode_literals
 
 from django.db import migrations, models
 from django.conf import settings
-import django.contrib.auth.models
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('auth', '0006_require_contenttypes_0002'),
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
@@ -31,6 +30,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('creation_time', models.DateTimeField(auto_now_add=True)),
                 ('comment', models.CharField(max_length=100, null=True)),
+                ('type', models.CharField(max_length=32, choices=[(b'RECIVIED', b'RECIVED'), (b'SENT', b'SENT')])),
             ],
             options={
                 'abstract': False,
@@ -39,20 +39,22 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='SantaUser',
             fields=[
-                ('user_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to=settings.AUTH_USER_MODEL)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('first_name', models.CharField(max_length=100)),
+                ('last_name', models.CharField(max_length=100)),
+                ('_email', models.EmailField(max_length=254, db_column=b'email')),
+                ('is_signed_in', models.BinaryField(default=False)),
                 ('playa_name', models.CharField(max_length=100, null=True)),
                 ('willing_to_get', models.BinaryField(default=True)),
+                ('what_makes_you_happy', models.CharField(max_length=100, null=True)),
+                ('what_makes_you_sad', models.CharField(max_length=100, null=True)),
+                ('what_power_ranger_are_you', models.CharField(max_length=100, null=True)),
+                ('django_user', models.OneToOneField(to=settings.AUTH_USER_MODEL)),
                 ('santa_to', models.ForeignKey(to='santa.SantaUser', null=True)),
             ],
             options={
                 'abstract': False,
-                'verbose_name': 'user',
-                'verbose_name_plural': 'users',
             },
-            bases=('auth.user',),
-            managers=[
-                ('objects', django.contrib.auth.models.UserManager()),
-            ],
         ),
         migrations.AddField(
             model_name='giftinglog',
@@ -62,6 +64,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='address',
             name='user',
-            field=models.ForeignKey(related_name='address', to='santa.SantaUser'),
+            field=models.OneToOneField(related_name='address', to='santa.SantaUser'),
         ),
     ]

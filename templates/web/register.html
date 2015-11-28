@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +7,14 @@
 </head>
 <body>
     <form method="post" class="uk-form" action="/register/">
-        <input type="text" name="email" id="email" placeholder="Email" />
-        <input type="text" name="Playa Name" id="playa_name"
-		<input type="password" name="Password" id="password" placeholder="Password" />
-		<button class="uk-button uk-button-large"><i class="uk-icon-lock"></i></button>
+        {% csrf_token %}
+        <input type="text" name="playa_name" id="playa_name" placeholder="Playa Name">
+        <input type="text" name="first_name" id="first_name" placeholder="First Name">
+        <input type="text" name="last_name" id="last_name" placeholder="Last Name">
+        <input type="text" name="city" id="city" placeholder="Black rock city" />
+        <input type="text" name="address" id="address" placeholder="Seven and half and C">
+        <input type="checkbox" default name="is_willing_to_get" id="is_willing_to_get" checked />
+		<button>Register</button>
     </form>
 </body>
 </html>
