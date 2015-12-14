@@ -9,8 +9,32 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <script src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script language="JavaScript" type="text/javascript">
+        function checkform ( form )
+        {
+            // see http://www.thesitewizard.com/archive/validation.shtml
+            // for an explanation of this script and how to use it on your
+            // own website
 
+            if (Name.value == "") {
+                alert( "Please enter your name" );
+                return false ;
+            }
+            if (City.value == "") {
+                alert( "Please enter a city" );
+                return false ;
+            }
+            if (Address.value == "") {
+                alert( "Please enter your address" );
+                return false ;
+            }
+            // ** END **
+            window.location.href="TellUsMore.html";
+            return true ;
+        }
+    </script>
     <style>
+
         @font-face { font-family: Playtime; src: url('../Fonts/playtime.ttf'); }
         @font-face { font-family: PlaytimeO; src: url('../Fonts/PlaytimeOblique.ttf'); }
         @font-face { font-family: Playtime3D; src: url('../Fonts/PlaytimeWithHotToddies3D.ttf'); }
@@ -163,14 +187,14 @@
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <input type="text" placeholder="Street Address" name="Street Address" id="Street Address">
+                    <input type="text" placeholder="Address" name="Address" id="Address">
                 </div>
             </div>
 
             <br><br><br><br><br><br><br><br>
             <div class="row">
                 <div class="col-xs-6" style="text-align: center">
-                    <input type="button" value="Start Playing" onclick='window.location.href="TellUsMore.html"' id="SignPpButton">
+                    <input type="button" value="Start Playing" onclick='checkform(this)' id="SignPpButton">
                 </div>
                 <div class="col-xs-6" style="text-align: center">
                     <input type="button" value="One Way" class="OneWay" name="OneWay" id="OneWay" onclick='window.location.href="Countdown.html"'
