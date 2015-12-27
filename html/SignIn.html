@@ -28,6 +28,18 @@
             text-shadow: 2px 2px 1px black;
         }
 
+        h2 {
+            text-align: center;
+            font-size: 33px;
+            color: red;
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 14px;
+            color: black;
+        }
+
         input[type="button"], input[type="submit"] {
             background: #FE837C;
             border-radius: 100px;
@@ -70,9 +82,11 @@
 
         .terms-text {
             color: white;
-            font-size: 60px;
+            font-size: 32px;
             text-align: center;
             margin-top: 98px;
+            margin-left: 10%;
+            margin-right: 10%;
         }
 
         .login {
@@ -88,13 +102,19 @@
         }
 
         .mytext {
+            position: fixed;
+            bottom: 50%;
+            width: 50%;
+            height : 33.33%;
+            text-align: center;
             font-size: 32px;
+            padding-left: 10%;
+            padding-right: 10%;
+            /*background: rgba(255, 255, 255, 0.44);
             margin-left: 61px;
             margin-top: -76px;
-            background: rgba(255, 255, 255, 0.44);
-            padding: 16px;
-            width: 666px;
-            border: 4px solid black;
+
+            border: 4px solid black;*/
         }
     </style>
 
@@ -133,15 +153,17 @@
 
 
 
-<div class="mytext">Some text goes here...<br>
-    Forgot your password? We forgive you <3. <br>Just click
-    <a href="">here</a> and maybe we can find a way to help</div>
+<div class="mytext"><h2>Burning Santa is the game where the gifting begins even before the burn festival...<br><br>
+    Simply sign up, fill out two easy questions and you are ready to play!</h2>
+</div>
 
 <form>
     <div class="login">
         <input type="text" class="mediumbutton" placeholder="username" name="username" id="username"><br>
         <input type="password" class="mediumbutton" placeholder="password" name="password" id="password"><br>
         <input type="button" class="bigbutton" value="Login" onclick="check(this.form)" id="loginbutton">
+        <br><h3>    Forgot your password? We forgive you <3. <br>Just click
+            <a href="">here</a> and maybe we can find a way to help</h3>
     </div>
 </form>
 
@@ -158,9 +180,12 @@
             </div>
             <div class="modal-body">
                 <p class="terms-text">
-                    Give with love<br>
-                    Have fun<br>
-                    Be happy
+                    Burning Santa does not hold responsible for, well - anything!
+                    The game is based on inner-community trust.
+                    <br>
+                    By applying to the game your address will be revealed to one random member of the community.
+                    <br>
+                    By agreeing to these terms you declare understanding the consequences and taking full responsibility for anything that happens.
                 </p>
             </div>
             <div class="modal-footer" style="text-align: center">
